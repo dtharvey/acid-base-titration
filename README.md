@@ -5,4 +5,5 @@ This module introduces students to acid-base titrations with a focus on the titr
 To run locally, install the packages shiny, shinythemes, titrationCurves, and shape (if not already installed), and enter the following two lines into the console:
 
 library(shiny)
+
 shiny::runGitHub("acid-base-titration","dtharvey")
