@@ -1,5 +1,5 @@
 ---
-output: html_document
+output: html_fragment
 ---
 
 <!-- The following script makes it possible to use the mhchem -->
@@ -8,29 +8,31 @@ output: html_document
 
 ```{=html}
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
+  MathJax.Ajax.config.path["mhchem"] =
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+  MathJax.Hub.Config({
+    TeX: {
+      extensions: ["[mhchem]/mhchem.js"]
+    }
+  });
+  MathJax.Hub.Config({ 
+    "HTML-CSS": { scale: 90 }, 
+    SVG: { linebreaks: { automatic:true } }, 
+  });
+  </script>
 ```
 
 <!-- text for activity 1 -->
 
-Use the upper set of controls on the right to define the titration of a strong acid or a strong base titrand using a strong base or a strong acid titrant. In order to span a wide range of concentrations, the sliders for concentration are logarithmic; the titrand's default concentration is $10^{-1} = 0.10 \text{ M}$ and the titrant's default concentration is $10^{-0.7} = 0.2 \text{ M}$. The lower set of controls allow you to determine the range of volumes to include when displaying the titration curve and to select an indicator. The color of the titration curve mimics the indicator's color during the titration. The titration's endpoint is defined here as the average of its acidic and basic limits. 
+The upper panel of controls set the conditions---concentrations and volumes---for the titration of a strong acid or a strong base titrand using a strong base or a strong acid titrant. The sliders for concentration are logarithmic; the titrand's default concentration is $10^{-1} = 0.10 \text{ M}$ and the titrant's default concentration is $10^{-0.7} = 0.2 \text{ M}$. The lower panel of controls sets the range of volumes to use when displaying the titration curve and selects the indicator. The color of the titration curve mimics the indicator's color during the titration. The indicator's endpoint is defined here as the average of its acidic and basic limits. 
 
-**Exercise 1**. Describe the effect of the titrand's concentration and volume, and the titrant's concentration on the shape and position of the titration curve along the *x*-axis and the change in pH at the equivalence point. Not all combinations of these variables yield a useful titration curve: it is easy to overshoot a titration's equivalence point if it requires just a few mL of titrant, and a titration becomes tedious if the equivalence point requires a large volume of titrant, so make note of limitations on the variables relative to each other. Are the effects the same when titrating a strong acid and titrating a strong base?
+**Exercise 1**. Describe how the titrand's concentration and volume, and the titrant's concentration affect the shape and position of the titration curve along the *x*-axis and the change in pH at the equivalence point. Not all combinations of these variables yield a useful titration curve---it is easy, for example, to overshoot a titration's equivalence point if it requires just a few mL of titrant---so make note of how limitations on one variable may depend on the values of other variable. Are the effects the same when titrating a strong acid and titrating a strong base?
 
-**Exercise 2**. Which indicators are suitable for a titration of a strong acid with a strong base using [titrand] = [titrant] = 0.10 M? Are there indicators that are useful across a wider range of concentrations? Repeat for the titration of a strong base with a strong acid.
+**Exercise 2**. Which indicators are suitable for a titration of a strong acid with a strong base when [titrand] = [titrant] = 0.10 M? Are there indicators that are useful across a wider range of concentrations? Repeat for the titration of a strong base with a strong acid.
 
-**Exercise 3**. When you use an indicator to signal the endpoint, you usually do not record the titration curve itself. In the absence of suitable indicator, then we must record the titration curve by measuring the pH of the titration mixture as we add the titrant. Is the change in pH sufficient to allow you to identify the equivalence point when [titrand] = [titrant] = 10^-3^ M?
+**Exercise 3**. When we use an indicator to signal the endpoint, we usually do not record the titration curve itself. In the absence of suitable indicator, however, we must record the titration curve by measuring the pH of the titration mixture as we add the titrant. Is the change in pH sufficient to allow you to identify the equivalence point when [titrand] = [titrant] = 10^-3^ M?
 
-**Exercise 4**. The monoprotic weak base guanine, $\ce{C5H5N5O}$, is insoluble in water, but fully soluble in acid. One way to determine the purity of guanine is to add a known amount of impure guanine to an excess of HCl and to then determine the amount of unreacted HCl by titrating with a standard solution of NaOH. Propose a set of conditions---mass of impure guanine, molarity and volume of HCl, molarity of NaOH, and acid-base indicator---that will allow you to determine the purity of guanine. You may assume that the samples are at least 95 %w/w guanine. All titrations should have endpoints between 20.0 mL and 40.0 mL.
+**Exercise 4**. The monoprotic weak base guanine, $\ce{C5H5N5O}$, is insoluble in water, but fully soluble in acid. One way to determine the purity of guanine is to add a known amount of impure guanine to an excess of HCl and to then determine the amount of unreacted HCl by titrating with a standard solution of NaOH. This is called a back-titration. Propose a set of conditions---mass of impure guanine, molarity and volume of HCl, molarity of NaOH, and acid-base indicator---that will allow you to determine the purity of guanine. You may assume that the samples are at least 95 %w/w guanine. All titrations should have endpoints between 20.0 mL and 40.0 mL.
 
 
 
