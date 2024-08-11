@@ -5,7 +5,7 @@ account: dthdpu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9647856
-bundleId: 7594324
+bundleId: 8970804
 url: https://dthdpu.shinyapps.io/acid-base-titration/
 version: 1
 asMultiple: FALSE
