@@ -1,21 +1,43 @@
 # server for acid-base-titration
 
+# packages to load; first two needed for using shiny
+# library(shiny)
+# library(shinythemes)
+# library(titrationCurves) # simulates titration curves
+# library(shape) # used to draw arrows
+
+# place for data files and scripts used in server file
+# indicator.name = c("bromophenol blue (3.0-4.6)",
+#                    "bromocresol green (3.8-5.4)", 
+#                    "methyl red (4.2-6.3)",
+#                    "bromocresol purple (5.2-6.8)", 
+#                    "bromothymol blue (6.0-7.6)", 
+#                    "phenol red (6.8-8.4)", 
+#                    "cresol red (7.2-8.8)", 
+#                    "p-naphtholbenzein (9.0-11.0)", 
+#                    "alizarin yellow R (10.1-12.0)")
+# 
+# acid.color = c(5,5,8,5,5,5,5,5,5) # color of indicator's acid form
+# acid.limit = c(3.0,3.8,4.2,5.2,6.0,6.8,7.2,9.0,10.1) # acid pH limit
+# base.color = c(3,3,5,8,3,3,8,3,8) # color of indicator's base form
+# base.limit = c(4.6,5.4,6.3,6.8,7.6,8.4,8.8,11.0,12.0) # base pH limit
+# 
+# # set color scheme
+# palette("Okabe-Ito")
+
 shinyServer(function(input, output, session){
   
-# code for introduction figure; titration of SA with SB
+# code for introduction figure
   output$intro_plot = renderPlot({
 
-    # create color ramp palette for indicator's color change;
-    # beginning and ending color given by colors; indicator is
-    # methyl red with acid limit of 4.2 and base limit of 6.3
-    # ind.color is a function created by colorRampPaletter()
+    # create color ramp palette for indicator's color change
     ind.color = colorRampPalette(colors = c(8,5), alpha = FALSE)
     
     # create titration curve data
     intro.data = sa_sb(conc.acid = 0.05066, conc.base = 0.1183, 
                        vol.acid = 50, plot = FALSE)
     
-    # find index for beginning and end of indicator's color change
+    # find index for beginning and and of indicator's color change
     ind_begin_index = which.min(abs(4.2 - intro.data$ph))
     ind_end_index = which.min(abs(6.3 - intro.data$ph))
     
@@ -25,7 +47,7 @@ shinyServer(function(input, output, session){
     eq_vol = intro.data$volume[which.min(abs(eq_ph - intro.data$ph))]
     ep_vol = intro.data$volume[which.min(abs(ep_ph - intro.data$ph))]
     
-    # plot titration curve before indicator changes color
+    # plot titration curve before indicator change
     plot(x = intro.data$volume[1:ind_begin_index], 
          xlab = "volume of NaOH added (mL)",
          y = intro.data$ph[1:ind_begin_index],type = "p",
@@ -39,7 +61,7 @@ shinyServer(function(input, output, session){
            pch = 19, cex = 2, 
            col = ind.color(ind_end_index-ind_begin_index + 1))
     
-    # plot remainder of titration curve after color change
+    # plot remainder of titration curve
     points(x = intro.data$volume[ind_end_index:length(intro.data$volume)],
            y = intro.data$ph[ind_end_index:length(intro.data$ph)],
            pch = 19, cex = 2,
@@ -58,7 +80,7 @@ shinyServer(function(input, output, session){
          cex = 1.5, pos = 2)
   })
 
-# code for SA/SB plot in activity 1
+# code for SA/SB plot
   output$activity1_plot = renderPlot({
     
     # identify the indicator
@@ -141,7 +163,7 @@ shinyServer(function(input, output, session){
     par(old.par)
   })
 
-# code for monoprotic WA/WB plot in activity 2
+# code for monoprotic WA/WB plot  
   output$activity2_plot = renderPlot({
     old.par = par(mar = c(5,4,1,2))  
     # identify the indicator
@@ -223,7 +245,7 @@ shinyServer(function(input, output, session){
     par(old.par)
   })
  
-# code for diprotic WA/WB plot in activity 3
+# code for diprotic WA/WB plot 
   output$activity3_plot = renderPlot({
     
     # identify the indicator
@@ -307,6 +329,7 @@ shinyServer(function(input, output, session){
          cex = 1.5, "endpoint", pos = 4)
     par(old.par)
   })
+  
   
   # code for plot on wrapping up tabPanel
   output$wrapup_plot = renderPlot({

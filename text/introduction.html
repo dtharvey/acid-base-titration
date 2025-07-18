@@ -1,23 +1,6 @@
 
 
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-<script type="text/x-mathjax-config">
-  MathJax.Ajax.config.path["mhchem"] =
-    "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-  MathJax.Hub.Config({
-    TeX: {
-      extensions: ["[mhchem]/mhchem.js"]
-    }
-  });
-  MathJax.Hub.Config({ 
-    "HTML-CSS": { scale: 90 }, 
-    SVG: { linebreaks: { automatic:true } }, 
-  });
-  </script>
-<!-- text for introduction -->
 <p>An acid-base titration is a quantitative analytical method in which
 we determine the concentration of an acidic or a basic analyte—which we
 call the titrand—by the controlled addition of a strong base or a strong
@@ -38,13 +21,13 @@ titration.</p>
 <h4>Equivalence Points and Endpoints</h4>
 <p>A titration’s equivalence point is the pH and volume where the
 initial moles of titrand is equal to the stoichiometric moles of titrant
-delivered. Locating the equivalence point is the critical measurement in
-a titration. A solution of a strong acid, such as HCl, has a pH below 7.
-As we add a strong base, such as NaOH, the pH increases but remains
-below 7 if HCl remains in excess. The pH rises above 7 when the moles of
-NaOH added exceeds the moles of HCl. When the pH is 7, the moles of NaOH
-added is the same as the moles of HCl initially present; this is the
-equivalence point.</p>
+delivered. The volume of titrant needed to reach the equivalence point
+is the critical measurement in a titration. A solution of a strong acid,
+such as HCl, has a pH below 7. As we add a strong base, such as NaOH,
+the pH increases but remains below 7 if HCl is in excess. The pH rises
+above 7 when the moles of NaOH added exceeds the moles of HCl. When the
+pH is 7, the moles of NaOH added is the same as the moles of HCl
+initially present; this is the equivalence point.</p>
 <p>If we know the equivalence point’s pH, then we can titrate to this
 exact pH and record the volume; this is, however, a rare circumstance.
 Instead, we either continue the titration until the pH levels off and

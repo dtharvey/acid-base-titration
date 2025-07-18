@@ -1,46 +1,30 @@
 
 
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-<script type="text/x-mathjax-config">
-  MathJax.Ajax.config.path["mhchem"] =
-    "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-  MathJax.Hub.Config({
-    TeX: {
-      extensions: ["[mhchem]/mhchem.js"]
-    }
-  });
-  MathJax.Hub.Config({ 
-    "HTML-CSS": { scale: 90 }, 
-    SVG: { linebreaks: { automatic:true } }, 
-  });
-  </script>
 <!-- text for activity 2 -->
-<p>The upper panel of controls set the conditions—concentrations and
+<p>The upper panel of controls define the conditions—concentrations and
 volumes—for the titration of a weak acid or a weak base titrand using a
-strong base or a strong acid titrant. Use the pK slider to the strength
-of the titrand. The sliders for concentration are logarithmic; the
-titrand’s default concentration is <span class="math inline">\(10^{-1} =
-0.10 \text{ M}\)</span> and the titrant’s default concentration is <span class="math inline">\(10^{-0.7} = 0.2 \text{ M}\)</span>. The lower
-panel of controls sets the range of volumes to use when displaying the
-titration curve and selects the indicator. The color of the titration
-curve mimics the indicator’s color during the titration. The indicator’s
-endpoint is defined here as the average of its acidic and basic
-limits.</p>
-<p><strong>Exercise 1</strong>. Describe how the titrand’s p<span class="math inline">\(K_a\)</span> or p<span class="math inline">\(K_b\)</span>, its concentration and its volume,
-and the titrant’s concentration affect the shape and position of the
+strong base or a strong acid titrant. Use the pK slider to select the
+strength of the titrand. The sliders for concentration are logarithmic;
+the titrand’s default concentration is <span class="math inline">\(10^{-1} = 0.10 \text{ M}\)</span> and the
+titrant’s default concentration is <span class="math inline">\(10^{-0.7}
+= 0.2 \text{ M}\)</span>. The lower panel of controls defines the range
+of volumes to use when displaying the titration curve and selects the
+indicator. The color of the titration curve mimics the indicator’s color
+during the titration. The indicator’s endpoint is defined here as the
+average of its acidic and basic limits.</p>
+<p><strong>Exercise 1</strong>. Describe how the titrand’s p<span class="math inline">\(K_a\)</span> or p<span class="math inline">\(K_b\)</span>, its concentration and volume, and
+the titrant’s concentration affect the shape and position of the
 titration curve along the <em>x</em>-axis and the change in pH at the
-equivalence point. Not all combinations of these variables yield a
+equivalence point. Not all combinations of these variables will yield a
 useful titration curve—it is easy, for example, to overshoot a
 titration’s equivalence point if it requires just a few mL of titrant—so
 make note of how limitations on one variable may depend on the values of
 other variable. Are the effects the same when titrating a weak acid and
 titrating a weak base?</p>
-<p><strong>Exercise 2</strong>. Which indicators are suitable for a
-titration of a weak acid with a strong base using [titrand] = [titrant]
-= 0.10 M? Are there indicators that are useful across a wider range of
+<p><strong>Exercise 2</strong>. Which indicators are suitable for the
+titration of a weak acid with a strong base when [titrand] = [titrant] =
+0.10 M? Are there indicators that are useful across a wider range of
 concentrations? Repeat for the titration of a weak base with a strong
 acid.</p>
 <p><strong>Exercise 3</strong>. When we use an indicator to signal the
@@ -51,7 +35,7 @@ titrant. Is the change in pH sufficient to allow you to identify the
 equivalence point when [titrand] = [titrant] = 10<sup>-3</sup> M?</p>
 <p><strong>Exercise 4</strong>. Vinegar is a dilute solution of acetic
 acid, <span class="math inline">\(\ce{CH3COOH}\)</span>, that typically
-is 4–8 %w/v. Propose a set of conditions—volume of vinegar, molarity and
-volume of NaOH, and acid-base indicator—that will allow you to determine
+is 4–8 %w/v. Propose a set of conditions—volume of vinegar, molarity of
+NaOH, and acid-base indicator—that will allow you to determine the
 concentration of acetic acid. All titrations should have endpoints
 between 20.0 mL and 40.0 mL.</p>

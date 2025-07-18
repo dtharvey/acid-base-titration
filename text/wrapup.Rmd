@@ -2,39 +2,19 @@
 output: html_fragment
 ---
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-  MathJax.Ajax.config.path["mhchem"] =
-    "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-  MathJax.Hub.Config({
-    TeX: {
-      extensions: ["[mhchem]/mhchem.js"]
-    }
-  });
-  MathJax.Hub.Config({ 
-    "HTML-CSS": { scale: 90 }, 
-    SVG: { linebreaks: { automatic:true } }, 
-  });
-  </script>
-```
-
 <!-- text for wrapping up -->
 
 #### Simulating Titration Curves
 
-The titration curves in this module were made using the `titrationCurve` package, a set of `R` functions for simulating and plotting acid-base titration curves (and metal-ligand complexation, redox, and precipitation titrations). Simulations use the general approach outlined in [R. de Levie, *Principles of Quantitative Analysis*, McGraw-Hill, 1997](https://www.worldcat.org/title/principles-of-quantitative-chemical-analysis/oclc/300033136). The package is available through [CRAN](https://cran.r-project.org/web/packages/titrationCurves/index.html) and through [GitHub](https://github.com/dtharvey/titrationCurves).
+The titration curves in this module are calculated using the `titrationCurve` package, a set of `R` functions for simulating and plotting acid-base titration curves (and metal-ligand complexation, redox, and precipitation titrations). The calculations use the general approach outlined in [R. de Levie, *Principles of Quantitative Analysis*, McGraw-Hill, 1997](https://www.worldcat.org/title/principles-of-quantitative-chemical-analysis/oclc/300033136). The package is available through [CRAN](https://cran.r-project.org/web/packages/titrationCurves/index.html) and through [GitHub](https://github.com/dtharvey/titrationCurves).
 
 #### Additional Thoughts on Endpoints
 
-Identifying the pH of a visual indicator's endpoint as the average of its lower pH limit and its upper pH limit, is one of convenience. There is no actual way to define an indicator's endpoint precisely because it is a subjective decision of the analyst and subject to the analyst's perception of colors. For some visual indicators, one of its two forms is colorless---phenolphthalein is one such indicator, with an acid form that is colorless and a base form that is red---which makes it somewhat easier to see the change in color and shifting the endpoint toward the pH where the colorless form predominates.
+Identifying the pH of a visual indicator's endpoint as the average of its lower pH limit and its upper pH limit, is one of convenience. There is no precise definition of an indicator's endpoint because the change in color is a subjective decision of each analyst. For some visual indicators, one of its two forms is colorless---phenolphthalein is one such indicator, with an acid form that is colorless and a base form that is red---which makes it somewhat easier to detect a change in color and may shift the endpoint toward the pH where the colorless form predominates. 
 
 #### Alternative Ways to Locate Equivalence Points
 
-When recording a titration curve, the equivalence point is where the change in pH as a function of volume---the slope of the titration curve---is greatest. Locating the exact equivalence point in a normal titration curve is difficult because we are not particularly adept at identifying the small differences in the slope when the pH is changing rapidly. Reporting the first-derivative of the titration curve, ∂pH/∂V, solves this problem, as shown by the figures on the right for the titration of a diprotic weak acid with NaOH where the equivalence points become sharp peaks. The equivalence points in both the normal titration curve and the first derivative titration curve are identified by the two vertical lines at 25 mL and 50 mL.
+When we record a titration curve, the equivalence point is where the change in pH as a function of volume---the slope of the titration curve---is greatest. Locating the exact equivalence point in a normal titration curve is difficult because we are not particularly adept at identifying the small differences in the slope when the pH is changing rapidly. Reporting the first-derivative of the titration curve, ∂pH/∂V, solves this problem, as seen in the figures on the right for the titration of a diprotic weak acid with NaOH where the equivalence points become sharp peaks. The equivalence points in both the normal titration curve and the first derivative titration curve are identified by the two vertical lines at 25 mL and 50 mL. One limitation to a first derivative titration curve is that it amplifies any noise in the titration curve, which may complicate locating the equivalence point. 
 
 #### Additional Resources
 
@@ -42,4 +22,4 @@ For a more detailed treatment of acid-base titrimetry, see [Chapter 9 of *Analyt
 
 The shiny app *Designing an Acid-Base Titration* introduces students to acid-base titrimetry at a level suitable for an introductory course in analytical chemistry. The app assumes students are comfortable with stoichiometric calculations. You can access the app through [shinyapps.io](https://www.google.com/url?q=https%3A%2F%2Fdthdpu.shinyapps.io%2FBeersLaw%2F&sa=D&sntz=1&usg=AOvVaw0CPeQJzyvft7D2mOHSaEWB) or through [GitHub](https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fdtharvey%2FTitrationApp&sa=D&sntz=1&usg=AOvVaw0W6pGNyWlRQY7ePSHrieJu).
 
-Another browser-based application is available [here](http://195.134.76.37/applets/AppletTitration/Appl_Titration2.html). [CurTiPot](https://www.iq.usp.br/gutz/Curtipot_.html) is a free spreadsheet program that, among other things, simulates acid-base titration curves.
+Another browser-based application is available [here](http://webapps.chem.uoa.gr/efs/applets/AppletTitration/Appl_Titration2.html). [CurTiPot](https://www.iq.usp.br/gutz/Curtipot_.html) is a free spreadsheet program that, among other things, simulates acid-base titration curves.

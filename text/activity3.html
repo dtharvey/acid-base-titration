@@ -1,45 +1,28 @@
 
 
 
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-<script type="text/x-mathjax-config">
-  MathJax.Ajax.config.path["mhchem"] =
-    "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
-  MathJax.Hub.Config({
-    TeX: {
-      extensions: ["[mhchem]/mhchem.js"]
-    }
-  });
-  MathJax.Hub.Config({ 
-    "HTML-CSS": { scale: 90 }, 
-    SVG: { linebreaks: { automatic:true } }, 
-  });
-  </script>
 <!-- text for activity 3 -->
-<p>The upper panel of controls set the conditions—concentrations and
-volumes—for the titration of a weak acid or a weak base titrand using a
-strong base or a strong acid titrant. Use the pK slider to set the two
-pK values for the weak acid or the weak base. The sliders for
-concentration are logarithmic; the titrand’s default concentration is
-<span class="math inline">\(10^{-1} = 0.10 \text{ M}\)</span> and the
+<p>The upper panel of controls define the conditions—concentrations and
+volumes—for the titration of a diprotic weak acid or weak base titrand
+using a strong base or a strong acid titrant. Use the pK sliders to set
+the two pK values for the titrands. The sliders for concentration are
+logarithmic; the titrand’s default concentration is <span class="math inline">\(10^{-1} = 0.10 \text{ M}\)</span> and the
 titrant’s default concentration is <span class="math inline">\(10^{-0.7}
-= 0.2 \text{ M}\)</span>. The lower panel of controls sets the range of
-volumes to use when displaying the titration curve and selects the
+= 0.2 \text{ M}\)</span>. The lower panel of controls defines the range
+of volumes to use when displaying the titration curve and selects the
 indicator. The color of the titration curve mimics the indicator’s color
 during the titration. The indicator’s endpoint is defined here as the
 average of its acidic and basic limits.</p>
 <p><strong>Exercise 1</strong>. Describe the effect of the titrand’s two
-p<span class="math inline">\(K_a\)</span> or p<span class="math inline">\(K_b\)</span> values, its concentration and its
-volume, and the titrant’s concentration on the shape and position of the
+p<span class="math inline">\(K_a\)</span> or p<span class="math inline">\(K_b\)</span> values, its concentration and volume,
+and the titrant’s concentration on the shape and position of the
 titration curve along the <em>x</em>-axis and the change in pH at each
 of its two equivalence points. Not all combinations of these variables
-yield a useful titration curve—it is easy, for example, to overshoot a
-titration’s equivalence point if it requires just a few mL of titrant—so
-make note of how limitations on one variable may depend on the values of
-other variable. Are the effects the same when titrating a diprotic weak
-acid and titrating a diprotic weak base?</p>
+will yield a useful titration curve—it is easy, for example, to
+overshoot a titration’s equivalence point if it requires just a few mL
+of titrant—so make note of how limitations on one variable may depend on
+the values of other variable. Are the effects the same when titrating a
+diprotic weak acid and titrating a diprotic weak base?</p>
 <p><strong>Exercise 2</strong>. Which indicators are suitable for a
 titration of a diprotic weak acid with a strong base using [titrand] =
 [titrant] = 0.10 M? Are there indicators that are useful across a wider
@@ -53,7 +36,7 @@ titrant. Is the change in pH sufficient to allow you to identify the
 equivalence point when [titrand] = [titrant] = 10<sup>-3</sup> M?</p>
 <p><strong>Exercise 4</strong>. Commercial washing soda is 30–40 %w/w
 <span class="math inline">\(\ce{Na2CO3}\)</span>. Propose a set of
-conditions—mass of washing soda, molarity and volume of HCl, and
+conditions—mass of washing soda, molarity of HCl, and choice of
 acid-base indicator—that will allow you to determine the amount of <span class="math inline">\(\ce{Na2CO3}\)</span> in samples of washing soda
 when using HCl as a titrant. All titrations should have endpoints
 between 20.0 mL and 40.0 mL.</p>
