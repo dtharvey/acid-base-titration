@@ -2,7 +2,7 @@
 output: html_fragment
 ---
 
-An acid-base titration is a quantitative analytical method in which we determine the concentration of an acidic or a basic analyte---which we call the titrand---by the controlled addition of a strong base or a strong acid---which we call the titrant---until the acid and the base react in a known stoichiometric ratio.   
+$\require{mhchem} \ce{}$ An acid-base titration is a quantitative analytical method in which we determine the concentration of an acidic or a basic analyte---which we call the titrand---by the controlled addition of a strong base or a strong acid---which we call the titrant---until the acid and the base react in a known stoichiometric ratio.   
 
 #### Titration Curves and Visual Indicators
 
