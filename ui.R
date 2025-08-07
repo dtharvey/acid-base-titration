@@ -14,12 +14,16 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
         withMathJax(),
         column(width = 6, 
           wellPanel(
-            includeHTML("text/introduction.html")
-      )),
+            class = "scrollable-well",
+            div(
+              class = "html-fragment",
+              includeHTML("text/introduction.html")
+      ))),
         column(width = 6,
           align = "center",
-          img(src = "intro_image.gif", height = "250px"),
-          plotOutput("intro_plot", height = "500px")
+          plotOutput("intro_plot", height = "350px"),
+          img(src = "intro_image.gif", height = "250px")
+          
           )
       )),  
      
@@ -28,8 +32,11 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
       fluidRow(
         column(width = 6,
           wellPanel(
-            includeHTML("text/activity1.html")
-      )),
+            class = "scrollable-well",
+            div(
+              class = "html-fragment",
+              includeHTML("text/activity1.html")
+      ))),
         column(width = 6,
           align = "center",
           splitLayout(
@@ -54,7 +61,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
           selectInput("act1_ind", "indicator",
                       choices = indicator.name, selectize = FALSE)
           ),
-          plotOutput("activity1_plot", height = "550px")
+          plotOutput("activity1_plot", height = "480px")
           )
       )), 
      
@@ -63,8 +70,11 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
               fluidRow(
                 column(width = 6,
                        wellPanel(
-                         includeHTML("text/activity2.html")
-                       )),
+                         class = "scrollable-well",
+                         div(
+                           class = "html-fragment",
+                           includeHTML("text/activity2.html")
+                       ))),
                 column(width = 6,
                        align = "center",
                        splitLayout(
@@ -103,7 +113,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
                                      choices = indicator.name, 
                                      selectize = FALSE)
                        ),
-                       plotOutput("activity2_plot", height = "550px")
+                       plotOutput("activity2_plot", height = "480px")
                 )
               )), 
      
@@ -112,8 +122,11 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
               fluidRow(
                 column(width = 6,
                        wellPanel(
-                         includeHTML("text/activity3.html")
-                       )),
+                         class = "scrollable-well",
+                         div(
+                           class = "html-fragment",
+                           includeHTML("text/activity3.html")
+                       ))),
                 column(width = 6,
                        align = "center",
                        splitLayout(
@@ -152,7 +165,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
                                      choices = indicator.name, 
                                      selectize = FALSE)
                        ),
-                       plotOutput("activity3_plot", height = "550px")
+                       plotOutput("activity3_plot", height = "480px")
                 )
               )), 
      
@@ -160,12 +173,15 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
      tabPanel("Wrapping Up",
       fluidRow(
         column(width = 6,
-               wellPanel(id = "wrapuppanel",
-                  style = "overflow-y:scroll; max-height: 700px",
-                  includeHTML("text/wrapup.html"))),
+               wellPanel(
+                 class = "scrollable-well",
+                 div(
+                   class = "html-fragment",
+                   includeHTML("text/wrapup.html")
+                 ))),
         column(width = 6,
           align = "center",
-          plotOutput("wrapup_plot", height = "750px")
+          plotOutput("wrapup_plot", height = "550")
           )
           
       )) 
