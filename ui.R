@@ -27,7 +27,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
           )
       )),  
      
-     # strong acids & strong bases
+     # first activity
      tabPanel("Strong Acids & Strong Bases",
       fluidRow(
         column(width = 6,
@@ -65,7 +65,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
           )
       )), 
      
-     # monoprotic weak acids and bases
+     # second activity
      tabPanel("Monoprotic Weak Acids & Weak Bases",
               fluidRow(
                 column(width = 6,
@@ -117,7 +117,7 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
                 )
               )), 
      
-     # diprotic acids and bases
+     # third activity
      tabPanel("Diprotic Weak Acids & Weak Bases",
               fluidRow(
                 column(width = 6,
@@ -183,7 +183,5 @@ ui = navbarPage("AC 3.0: Acid-Base Titrations",
           align = "center",
           plotOutput("wrapup_plot", height = "550")
           )
-          
-      )) 
-     
+      ))
      ) 
